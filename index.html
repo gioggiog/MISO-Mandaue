@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MISO | Management Information Systems Office – City of Mandaue</title>
+<meta name="description" content="Powering public service through technology and innovation. Management Information Systems Office, City Government of Mandaue.">
+<link rel="icon" href="assets/one-mandaue.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#C10A20;
+  --navy:#173D9A;
+  --blue:#0064CC;
+  --orange:#F3A108;
+  --yellow:#FFD305;
+  --ink:#1f2937;
+  --paper:#ffffff;
+  --mist:#f4f6fb;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:1.05rem}
+h1,h2{font-family:'Work Sans',Arial,sans-serif;font-weight:900;line-height:1.05}
+h3,.sub{font-family:'Work Sans',Arial,sans-serif;font-weight:500}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+
+/* brand stripe */
+.stripe{display:flex;height:10px}
+.stripe i{flex:1}
+.stripe i:nth-child(1){flex:5;background:var(--red)}
+.stripe i:nth-child(2){flex:2;background:var(--navy)}
+.stripe i:nth-child(3){flex:2;background:var(--blue)}
+.stripe i:nth-child(4){flex:1;background:var(--orange)}
+.stripe i:nth-child(5){flex:1;background:var(--yellow)}
+
+/* header */
+header{padding:2.5rem 0 3rem;text-align:center}
+.logos{display:flex;align-items:center;justify-content:center;gap:2.5rem;margin-bottom:2.25rem;flex-wrap:wrap}
+.logos img{display:block;height:auto}
+.logos .seal{width:112px}          /* seal slightly larger than One Mandaue, per guide */
+.logos .om{width:96px}
+.logos .miso{width:190px}
+.logos .div{width:2px;align-self:stretch;background:var(--mist)}
+h1{font-size:clamp(2.4rem,6.2vw,4.6rem);color:var(--navy);letter-spacing:-.01em;max-width:16ch;margin:0 auto}
+.sub{font-size:clamp(1.15rem,2.2vw,1.5rem);color:var(--red);margin-top:1rem}
+.tag{display:inline-block;margin-top:1.75rem;background:var(--yellow);color:var(--navy);font-family:'Work Sans',Arial,sans-serif;font-weight:500;font-size:clamp(1rem,2vw,1.25rem);padding:.65rem 1.4rem;border-radius:999px}
+
+/* purpose */
+.purpose{background:var(--navy);color:#fff;padding:3rem 0;border-top:8px solid var(--yellow)}
+.purpose p{font-family:'Work Sans',Arial,sans-serif;font-weight:500;font-size:clamp(1.2rem,2.6vw,1.8rem);line-height:1.4;max-width:34em;margin:0 auto;text-align:center}
+
+/* divisions */
+.divisions{padding:4.5rem 0}
+.divisions>.wrap>h2{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--red);margin-bottom:.5rem}
+.divisions>.wrap>p{max-width:38em;margin-bottom:2.5rem;color:#4b5563}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.card{background:var(--mist);border-top:8px solid var(--c);padding:1.75rem 1.75rem 2rem;display:flex;flex-direction:column}
+.card .icon{width:44px;height:44px;color:var(--c);margin-bottom:1rem}
+.card h3{font-size:1.5rem;color:var(--navy);line-height:1.2}
+.card .focus{margin:.4rem 0 1rem;font-weight:bold;color:var(--c)}
+.card ul{list-style:none}
+.card li{position:relative;padding:.4rem 0 .4rem 1.5rem;border-top:1px solid #dde3f0}
+.card li:first-child{border-top:0}
+.card li::before{content:"";position:absolute;left:0;top:.95rem;width:.6rem;height:.6rem;background:var(--c)}
+.c1{--c:var(--red)} .c2{--c:var(--navy)} .c3{--c:var(--blue)} .c4{--c:var(--orange)}
+.c4 .focus{color:#a86d00}
+
+/* call to action */
+.cta{background:var(--red);color:#fff;padding:4rem 0}
+.cta .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center}
+.cta h2{font-size:clamp(1.9rem,4.5vw,3.2rem)}
+.cta .lead{margin:1rem 0 1.75rem;font-size:1.15rem;max-width:30em}
+.contact{list-style:none;display:grid;gap:.6rem}
+.contact li{padding-left:1rem;border-left:4px solid var(--yellow)}
+.contact b{font-family:'Work Sans',Arial,sans-serif;font-weight:500;display:block;font-size:.9rem;opacity:.85}
+.contact a{text-decoration:underline;text-underline-offset:3px}
+.qr{background:#fff;color:var(--navy);padding:1.25rem;text-align:center;border-radius:4px}
+.qr .box{aspect-ratio:1;border:3px dashed var(--navy);display:grid;place-items:center;padding:1rem;font-size:.95rem}
+.qr p{margin-top:.75rem;font-family:'Work Sans',Arial,sans-serif;font-weight:500}
+.qr img{width:100%;height:auto;display:block}
+
+footer{padding:1.5rem 0 2rem;text-align:center;font-size:.9rem;color:#6b7280}
+
+@media (max-width:760px){
+  .grid{grid-template-columns:1fr}
+  .cta .wrap{grid-template-columns:1fr}
+  .qr{max-width:280px}
+  .logos .div{display:none}
+  .logos{gap:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<header>
+  <div class="wrap">
+    <div class="logos">
+      <img class="seal" src="assets/mandaue-seal.png" alt="Official Seal of the City of Mandaue">
+      <img class="om" src="assets/one-mandaue.png" alt="One Mandaue logo">
+      <span class="div" aria-hidden="true"></span>
+      <img class="miso" src="assets/miso.png" alt="MISO logo">
+    </div>
+    <h1>Management Information Systems Office</h1>
+    <p class="sub">City Government IT Department</p>
+    <p class="tag">Powering Public Service Through Technology &amp; Innovation</p>
+  </div>
+</header>
+
+<section class="purpose">
+  <div class="wrap">
+    <p>Driving city-wide digital transformation through resilient IT infrastructure, custom software systems, collaborative data management, and operational excellence.</p>
+  </div>
+</section>
+
+<section class="divisions" id="divisions">
+  <div class="wrap">
+    <h2>Our Core Divisions</h2>
+    <p>Four teams, one goal: keeping Mandaue City Hall and its services running smoothly.</p>
+
+    <div class="grid">
+
+      <article class="card c1">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><rect x="2" y="4" width="20" height="13"/><path d="M8 21h8M12 17v4"/></svg>
+        <h3>IT Infrastructure Division</h3>
+        <p class="focus">Hardware, systems maintenance &amp; city networking</p>
+        <ul>
+          <li>City-wide hardware &amp; software troubleshooting</li>
+          <li>Network maintenance, deployment &amp; connectivity support</li>
+          <li>Assembly, setup &amp; operation of event &amp; municipal LED display systems</li>
+          <li>Workstation assembly, maintenance &amp; technical office support</li>
+        </ul>
+      </article>
+
+      <article class="card c2">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+        <h3>Systems Development Division</h3>
+        <p class="focus">Custom applications &amp; enterprise software</p>
+        <ul>
+          <li>In-house design &amp; development of city software solutions</li>
+          <li>Continuous maintenance &amp; upgrading of internal government systems</li>
+          <li>Technical support &amp; system integration for municipal offices</li>
+          <li>Streamlining public workflows through digital platforms</li>
+        </ul>
+      </article>
+
+      <article class="card c3">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+        <h3>Project Management Division</h3>
+        <p class="focus">Data governance, collaboration &amp; city portals</p>
+        <ul>
+          <li>Oversight of city data assets &amp; inter-office data portals</li>
+          <li>Cross-departmental data collaboration &amp; analytics support</li>
+          <li>Technical project coordination for city-wide initiatives</li>
+          <li>Managing digital resources &amp; information accessibility</li>
+        </ul>
+      </article>
+
+      <article class="card c4">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M9 10h6M9 14h6M9 18h4"/></svg>
+        <h3>Administrative Division</h3>
+        <p class="focus">Office operations, governance &amp; logistics</p>
+        <ul>
+          <li>Procurement coordination, compliance &amp; records management</li>
+          <li>Departmental logistics, communication &amp; human resource support</li>
+          <li>Inter-office administrative alignment &amp; workflow optimization</li>
+          <li>Daily operational &amp; facilities management</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="connect">
+  <div class="wrap">
+    <div>
+      <h2>Connect &amp; Explore Opportunities</h2>
+      <p class="lead">Interested in government tech, data management &amp; IT operations? Visit our booth or connect with us!</p>
+      <ul class="contact">
+        <li><b>Website</b><a href="#">[Insert City Portal / Website URL]</a></li>
+        <li><b>Facebook</b><a href="#">[Insert Official MISO Facebook Page Handle]</a></li>
+        <li><b>Location</b>City Hall Building / MIS Office</li>
+      </ul>
+    </div>
+    <div class="qr">
+      <!-- Replace the box below with: <img src="assets/qr.png" alt="QR code to the MISO website"> -->
+      <div class="box">Place QR code here</div>
+      <p>Scan to visit us</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© City Government of Mandaue · Management Information Systems Office</div>
+</footer>
+
+</body>
+</html>
